@@ -1,0 +1,50 @@
+---
+layout: blog
+title: Blog
+description: Official blog dari LIPATAN. Peluang usaha dropship / reseller fashion Bandung. Grosir sepatu, jaket, baju murah. Murahnya berlipat-lipat.
+---
+
+					<div class="blog-post-area">
+						<h1 class="title text-center">Blog LIPATAN</h1>
+
+						{% for post in paginator.posts %}
+
+						<div class="single-blog-post">
+							<h2 style="color: #696763; font-size: 22px; font-family: 'Roboto',sans-serif; font-weight: 500; margin-top: 22px; margin-bottom: 17px;"><b>{{ post.title }}</b></h2>
+							<div class="post-meta">
+								<ul>
+									<li><i class="fa fa-user"></i> {{ site.author }}</li>
+									<li><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</li>
+								</ul>
+								<span>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star-half-o"></i>
+								</span>
+							</div>
+							<div style="text-align: justify;">
+							{{ post.excerpt }}
+							<a class="btn btn-primary" href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="Read More">Read More</a>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+
+					<!-- Pagination links -->
+					<div style="text-align: center;">
+					<div class="pagination">
+					  {% if paginator.previous_page %}
+					    <a href="{{ site.url }}{{ site.baseurl }}{{ paginator.previous_page_path }}" class="previous">Previous</a>
+					  {% else %}
+					    <span class="previous">Previous</span>
+					  {% endif %}
+					  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+					  {% if paginator.next_page %}
+					    <a href="{{ site.url }}{{ site.baseurl }}{{ paginator.next_page_path }}" class="next">Next</a>
+					  {% else %}
+					    <span class="next ">Next</span>
+					  {% endif %}
+					</div>
+					</div>

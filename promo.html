@@ -1,0 +1,35 @@
+---
+layout: blog
+title: Promo dan Diskon
+description: Dapatkan promo dan diskon menarik dari toko kami. Jangan lupa subscribe email Anda untuk mendapatkan info promo dan diskonnya.
+---
+
+					<div class="blog-post-area">
+						<h1 class="title text-center">PROMO DAN DISKON</h1>
+
+						{% assign cat = "promo" %}
+  						{% for mypost in site.categories[cat] %}
+    						
+						<div class="single-blog-post">
+							<h2 style="color: #696763; font-size: 22px; font-family: 'Roboto',sans-serif; font-weight: 500; margin-top: 22px; margin-bottom: 17px;"><b>{{ mypost.title }}</b></h2>
+							<div class="post-meta">
+								<ul>
+									<li><i class="fa fa-user"></i> {{ site.author }}</li>
+									<li><i class="fa fa-calendar"></i> {{ mypost.date | date: "%b %-d, %Y" }}</li>
+								</ul>
+								<span>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star-half-o"></i>
+								</span>
+							</div>
+							<div style="text-align: justify;">
+							{{ mypost.excerpt }}
+							<a class="btn btn-primary" href="{{ site.url }}{{ site.baseurl }}{{ mypost.url }}" title="Read More">Read More</a>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<br><br>
